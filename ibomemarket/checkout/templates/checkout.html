@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% load paystack %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checkout Page</title>
+</head>
+
+
+{% block content%}
+<link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
+<!-- <link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css" %}'> -->
+<body>
+	{%include 'nav-bar.html'%}
+
+<div class="container">
+
+	<h1>Checkout Page</h1>
+	<hr>
+	<button style="float: right" class="btn btn-default"> Welcome {{request.user.username|title}}</button>
+	<!-- <button class="btn btn-primary">{{request.user.email}}</button> -->
+
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+
+<div class="row">
+
+<!-- First page -->
+
+	<div class="col-md-3 square">
+
+		<p style="text-align: center; height: 100%;">Help</p>
+		<img src="{% static 'img/shop/1.jpg' %}" class="img-responsive">
+		{% paystack_button amount=1000 email="godfredakpan@gmail.com" %}
+	</div>
+
+	<div class="col-md-3" style="margin-bottom: 20px;">
+		<p style="text-align: center; height: 100%;">Help</p>
+		<img src="{% static 'img/shop/3.jpg' %}" class="img-responsive">
+		{% paystack_button amount=5000 email="godfredakpan@gmail.com" %}
+	</div>
+	
+	<div class="col-md-3">
+		<p style="text-align: center; height: 100%;">Help</p>
+		<img src="{% static 'img/shop/2.jpg' %}" class="img-responsive">
+		{% paystack_button amount=3000 email="godfredakpan@gmail.com" %}
+	</div>
+
+	<div class="col-md-3" style="margin-bottom: 20px;">
+		<p style="text-align: center; height: 100%;">Help</p>
+		<img src="{% static 'img/shop/router.jpg' %}" class="img-responsive">
+		{% paystack_button amount=3000 email="godfredakpan@gmail.com" %}
+
+	</div>
+	<hr>
+	<br>
+<!-- Second page -->
+
+
+	<div class="col-md-3 square">
+
+		<p style="text-align: center; height: 100%;">Help</p>
+		<img src="{% static 'img/shop/1.jpg' %}" class="img-responsive">
+		{% paystack_button amount=9000 email="godfredakpan@gmail.com" %}
+	</div>
+
+	<div class="col-md-3">
+		<p style="text-align: center; height: 100%;">Help</p>
+		<img src="{% static 'img/shop/3.jpg' %}" class="img-responsive">
+		{% paystack_button amount=10000 email="godfredakpan@gmail.com" %}
+	</div>
+	
+	<div class="col-md-3">
+		<p style="text-align: center; height: 100%;">Help</p>
+		<img src="{% static 'img/shop/2.jpg' %}" class="img-responsive">
+		{% paystack_button amount=15000 email="godfredakpan@gmail.com" %}
+	</div>
+
+	<div class="col-md-3">
+		<p style="text-align: center; height: 100%;">Help</p>
+		<img src="{% static 'img/shop/router.jpg' %}" class="img-responsive">
+		{% paystack_button amount=20000 email="godfredakpan@gmail.com" %}
+
+	</div>
+	<hr>
+	<br>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+
+
+</body>
+</html>
